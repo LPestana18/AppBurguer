@@ -4,4 +4,7 @@
     <string name="informacoes">Informações</string>
     <string name="bini_s">Bini\'s</string>
     <string name="nome_do_produto">Nome do produto</string>
+    <string name="preco">Preço</string>
+    <string name="descricao">Descrição</string>
+    <string name="salvar">Salvar</string>
 </resources>
