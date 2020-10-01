@@ -15,5 +15,4 @@ interface MenuDao {
     @Query("SELECT * FROM menu WHERE id = :id")
     fun getMenu(id: Long) : MenuEntity
 
-    
 }
