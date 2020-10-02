@@ -12,6 +12,9 @@ interface MenuDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(menu: MenuEntity)
 
+    @Query("DELETE FROM menu")
+    fun deleteAll()
+
     @Query("SELECT * FROM menu WHERE id = :id")
     fun getMenu(id: Long) : MenuEntity
 
