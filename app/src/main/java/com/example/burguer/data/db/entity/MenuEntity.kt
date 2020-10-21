@@ -1,4 +1,4 @@
-package com.example.burguer.data.db
+package com.example.burguer.data.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

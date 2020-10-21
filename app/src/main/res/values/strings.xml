@@ -7,4 +7,7 @@
     <string name="preco">Preço</string>
     <string name="descricao">Descrição</string>
     <string name="salvar">Salvar</string>
+
+    <string name="inserted_successfully">Produto inserido com sucesso!</string>
+    <string name="inserted_error_to_insert">Erro ao inserir o produto</string>
 </resources>

@@ -1,21 +1,28 @@
 package com.example.burguer.data.db.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import com.example.burguer.data.db.MenuEntity
+import androidx.lifecycle.LiveData
+import androidx.room.*
+import com.example.burguer.data.db.entity.MenuEntity
 
 @Dao
 interface MenuDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun save(menu: MenuEntity)
+    suspend fun insert(menu: MenuEntity): Long
+
+    @Update
+    suspend fun update(menu: MenuEntity)
+
+    @Query("DELETE FROM menu WHERE id = :id")
+    suspend fun delete(id: Long)
 
     @Query("DELETE FROM menu")
-    fun deleteAll()
+    suspend fun deleteAll()
 
     @Query("SELECT * FROM menu WHERE id = :id")
-    fun getMenu(id: Long) : MenuEntity
+    suspend fun getMenu(id: Long) : MenuEntity
+
+    @Query("SELECT * FROM menu")
+    fun getAll(): LiveData<List<MenuEntity>>
 
 }

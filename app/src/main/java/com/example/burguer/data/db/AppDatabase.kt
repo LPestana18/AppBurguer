@@ -4,13 +4,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.burguer.data.db.dao.MenuDao
+import com.example.burguer.data.db.entity.MenuEntity
 
 // Classe para o banco de dados
 
 @Database(entities = [MenuEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase(){
 
-    abstract fun menudao(): MenuDao
+    abstract val menudao: MenuDao
     
     companion object {
         // Singleton prevents multiple instances of database opening at the same time.
